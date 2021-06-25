@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма по добавлению машины{% endblock %}
+
+{% block content %}
+
+    <div class="features">
+
+        <h1>Форма по добавлению машины</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.model }}<br>
+            {{ form.engine }}<br>
+            {{ form.speed }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Добавить машину</button>
+
+
+        </form>
+
+    </div>
+
+{% endblock %}

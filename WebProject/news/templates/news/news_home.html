@@ -1,0 +1,33 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+
+    <div class="features">
+
+        <h1>Топик</h1>
+
+      {% if news %}
+        {% for el in news %}
+
+        <div class="alert alert-warning">
+
+            <h3>{{ el.model }}</h3>
+            <p>{{ el.engine }}</p>
+            <p>{{ el.speed }}</p>
+            <p>{{ el.date }}</p>
+        </div>
+        {% endfor %}
+      {% else %}
+            <p>Нет записей!</p>
+      {% endif %}
+
+
+
+
+    </div>
+
+{% endblock %}
+
+
